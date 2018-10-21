@@ -1,0 +1,18 @@
+{
+  "name": "modmore/csrf-helper",
+  "description": "CSRF Helper for MODX by modmore.",
+  "license": "mit",
+  "config": {
+    "platform": {
+      "php": "5.5.0"
+    }
+  },
+  "require": {
+    "paragonie/random_compat": ">=2"
+  },
+  "autoload": {
+    "psr-4": {
+      "modmore\\CSRFHelper\\" : "src/"
+    }
+  }
+}

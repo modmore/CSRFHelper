@@ -1,0 +1,5 @@
+CSRF Helper 1.0.0-pl
+--------------------
+Released on 2018-10-25
+
+- Initial release.
