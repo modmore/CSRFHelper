@@ -87,11 +87,18 @@ if (!createObject('modSnippet', array(
 ), 'name', false)) {
     echo "Error creating csrfhelper snippet.\n";
 }
-// Snippets
 if (!createObject('modSnippet', array(
     'name' => 'csrfhelper_formit',
     'static' => true,
     'static_file' => $componentPath.'/core/components/csrfhelper/elements/snippets/csrfhelper_formit.snippet.php',
+), 'name', false)) {
+    echo "Error creating csrfhelper_formit snippet.\n";
+}
+
+if (!createObject('modSnippet', array(
+    'name' => 'csrfhelper_login',
+    'static' => true,
+    'static_file' => $componentPath.'/core/components/csrfhelper/elements/snippets/csrfhelper_login.snippet.php',
 ), 'name', false)) {
     echo "Error creating csrfhelper_formit snippet.\n";
 }

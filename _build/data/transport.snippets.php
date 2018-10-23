@@ -2,6 +2,7 @@
 $snips = array(
     'csrfhelper' => 'Generates a CSRF token for a specific form.',
     'csrfhelper_formit' => 'Hook to use with FormIt to validate a CSRF token.',
+    'csrfhelper_login' => 'Hook to use with Login snippets to validate a CSRF token.',
 );
 
 $snippets = array();

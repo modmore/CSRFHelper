@@ -1,11 +1,12 @@
 <?php
 /**
- * CSRF Helper for FormIt
+ * CSRF Helper for Login (and Register + UpdateProfile snippets)
  *
- * This snippet validates a CSRF token as a FormIt hook
+ * This snippet validates a CSRF token as a hook for the Login snippets.
  *
  * @var modX $modx
- * @var fiHooks $hook
+ * @var array $scriptProperties
+ * @var LoginHooks $hook
  *
  */
 
@@ -17,12 +18,11 @@ use modmore\CSRFHelper\Csrf;
 use modmore\CSRFHelper\InvalidTokenException;
 use modmore\CSRFHelper\Storage\SessionStorage;
 
-$key = $modx->getOption('csrfKey', $hook->config, 'default');
+$key = $modx->getOption('csrfKey', $scriptProperties, 'default');
 
 $storage = new SessionStorage();
 $csrf = new Csrf($storage, $modx->getUser());
 $token = $hook->getValue('csrf_token');
-
 
 try {
     $csrf->check($key, $token);
@@ -30,14 +30,14 @@ try {
 }
 catch (InvalidTokenException $e) {
     $hook->addError('csrf_token', 'Your security token did not match the expected token.');
-    $modx->log(modX::LOG_LEVEL_WARN, '[csrfhelper] Received an invalid CSRF token');
+    $modx->log(modX::LOG_LEVEL_WARN, '[csrfhelper_login] Received an invalid CSRF token');
     return false;
 }
 catch (Error $e) {
     throw $e;
 }
 catch (Exception $e) {
-    $modx->log(modX::LOG_LEVEL_ERROR, '[csrfhelper] Could not safely generate the CSRF token: ' . $e->getMessage());
+    $modx->log(modX::LOG_LEVEL_ERROR, '[csrfhelper_login] Could not safely generate the CSRF token: ' . $e->getMessage());
     $hook->addError('csrf_token', 'Could not securely generate a CSRF token to protect your form submission.');
 }
 return false;
