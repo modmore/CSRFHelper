@@ -13,7 +13,7 @@ foreach ($snips as $name => $description) {
     $snippets[$idx] = $modx->newObject('modSnippet');
     $snippets[$idx]->fromArray(array(
        'name' => $name,
-       'description' => $description . ' (Part of Commerce)',
+       'description' => $description,
        'snippet' => getSnippetContent($sources['snippets'] . strtolower($name) . '.snippet.php')
     ));
 }
