@@ -12,6 +12,8 @@
  *
  *   <input type="hidden" name="csrf_token" value="[[!csrfhelper? &key=`login` &singleUse=`1`]]">
  *
+ * @var modX $modx
+ * @var array $scriptProperties
  */
 
 $path = $modx->getOption('csrfhelper.core_path', null, MODX_CORE_PATH . 'components/csrfhelper/');
