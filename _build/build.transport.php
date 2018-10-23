@@ -23,8 +23,8 @@ if (!defined('MOREPROVIDER_BUILD')) {
     /* define version */
     define('PKG_NAME','CSRFHelper');
     define('PKG_NAMESPACE','csrfhelper');
-    define('PKG_VERSION','0.9.0');
-    define('PKG_RELEASE','pl');
+    define('PKG_VERSION','1.0.0');
+    define('PKG_RELEASE','rc1');
 
     /* load modx */
     require_once dirname(dirname(__FILE__)) . '/config.core.php';

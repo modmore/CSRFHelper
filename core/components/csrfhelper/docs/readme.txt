@@ -20,12 +20,6 @@ The Open Web Application Security Project (OWASP) explains CSRF as follows:
 
     https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
 
-On a MODX site, areas that may require protection against CSRF include:
+Documentation detailing the different uses and supported tools in CSRF Helper can be found at:
 
-- Contact forms
-- Login, registration, profile update
-- Checkout
-
-CSRF Helper can help!
-
-Brought to you by modmore (modmore.com).
+    https://docs.modmore.com/en/Open_Source/CSRFHelper/index.html
