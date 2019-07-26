@@ -18,6 +18,13 @@ use modmore\CSRFHelper\Csrf;
 use modmore\CSRFHelper\InvalidTokenException;
 use modmore\CSRFHelper\Storage\SessionStorage;
 
+// Allow logout to pass without a CSRF key
+$actionKey = $hook->controller->getProperty('actionKey', 'service');
+$logoutKey = $hook->controller->getProperty('logoutKey', 'logout');
+if (isset($_REQUEST[$actionKey]) && $_REQUEST[$actionKey] === $logoutKey) {
+    return true;
+}
+
 $key = $modx->getOption('csrfKey', $scriptProperties, 'default');
 
 $storage = new SessionStorage();

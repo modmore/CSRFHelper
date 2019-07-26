@@ -1,4 +1,5 @@
 - Make sure tokens that expired are considered invalid
+- Allow logging out without a CSRF token [#2]
 
 CSRF Helper 1.0.0-rc1
 ----------------------
