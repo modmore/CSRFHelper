@@ -61,6 +61,10 @@ class Csrf {
         if ($expected !== $token) {
             throw new InvalidTokenException('Token does not match');
         }
+
+        if ($this->isExpired($token)) {
+            throw new InvalidTokenException('Token has expired');
+        }
     }
 
     private function isExpired($token)
