@@ -1,0 +1,11 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/core/components/csrfhelper"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: paragonie/random_compat
+    versions:
+    - 2.0.19
