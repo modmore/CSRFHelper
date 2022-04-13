@@ -1,3 +1,4 @@
+- Fix MODX3 compatibility
 - Allow translating the error message through a new lexicon [#3]
 - Update paragonie/random_compat to 2.0.21
 

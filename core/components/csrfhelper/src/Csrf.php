@@ -3,6 +3,7 @@
 namespace modmore\CSRFHelper;
 
 use modmore\CSRFHelper\Storage\StorageInterface;
+use MODX\Revolution\modUser;
 
 class Csrf {
     /**
@@ -11,9 +12,17 @@ class Csrf {
     protected $storage;
     protected $user;
 
-    public function __construct(StorageInterface $storage, \modUser $user)
+    /**
+     * @param StorageInterface $storage
+     * @param \modUser|modUser $user
+     */
+    public function __construct(StorageInterface $storage, $user)
     {
         $this->storage = $storage;
+
+        if (!($user instanceof modUser || $user instanceof \modUser)) {
+            throw new \InvalidArgumentException('Expected modUser, got ' . get_class($user));
+        }
         $this->user = $user;
     }
 

@@ -5,7 +5,7 @@ namespace modmore\CSRFHelper\Storage;
 interface StorageInterface {
     /**
      * @param string $key
-     * @return string
+     * @return string|bool
      */
     public function get($key);
 
