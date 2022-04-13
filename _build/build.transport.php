@@ -23,7 +23,7 @@ if (!defined('MOREPROVIDER_BUILD')) {
     /* define version */
     define('PKG_NAME','CSRFHelper');
     define('PKG_NAMESPACE','csrfhelper');
-    define('PKG_VERSION','1.0.0');
+    define('PKG_VERSION','1.1.0');
     define('PKG_RELEASE','pl');
 
     /* load modx */
@@ -34,8 +34,6 @@ if (!defined('MOREPROVIDER_BUILD')) {
     $modx->setLogLevel(modX::LOG_LEVEL_INFO);
     $modx->setLogTarget('ECHO');
 
-
-    echo '<pre>';
     flush();
     $targetDirectory = dirname(dirname(__FILE__)) . '/_packages/';
 }
