@@ -29,7 +29,9 @@ try {
     return true;
 }
 catch (InvalidTokenException $e) {
-    $hook->addError('csrf_token', 'Your security token did not match the expected token.');
+    $modx->lexicon->load('csrfhelper:default');
+    $error = $modx->lexicon('csrfhelper.error');
+    $hook->addError('csrf_token', $error);
     $modx->log(modX::LOG_LEVEL_WARN, '[csrfhelper] Received an invalid CSRF token');
     return false;
 }
