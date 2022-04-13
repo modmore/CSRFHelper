@@ -1,3 +1,5 @@
+- Update paragonie/random_compat to 2.0.21
+
 CSRF Helper 1.0.0-pl
 ----------------------
 Released on 2019-07-26
